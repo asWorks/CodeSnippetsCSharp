@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>asDispatcherTimer</Title>
+      <Author>dev@asWorks.de</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>asDispatcherTimer</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ti</ID>
+          <ToolTip>ti</ToolTip>
+          <Default>ti</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[            private DispatcherTimer $ti$;
+            $ti$ = new DispatcherTimer();
+            $ti$.Tick += new EventHandler($ti$_Tick);
+            $ti$.Interval = new TimeSpan(0, 0, 0, 0, 500);
+            $ti$.Start();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

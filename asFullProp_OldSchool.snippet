@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SnippetFile1</Title>
+      <Author>dev@asWorks.de</Author>
+      <Description> Full Property mit Private variable
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>asFullProperty_OldSchool</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>DataType</ID>
+          <ToolTip>DataType</ToolTip>
+          <Default>DataType</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ObjectName</ID>
+          <ToolTip>ObjectName</ToolTip>
+          <Default>ObjectName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[  private $DataType$ _$ObjectName$;
+        public $DataType$ $ObjectName$
+        {
+            get { return _$ObjectName$; }
+            set
+            {
+                if (value != _$ObjectName$)
+                {
+                    _$ObjectName$ = value;
+                    OnPropertyChanged("$ObjectName$");
+                    //  isDirty = true;
+                }
+            }
+        }    ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

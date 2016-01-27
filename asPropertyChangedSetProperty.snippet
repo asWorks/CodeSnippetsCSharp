@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>asPropertyChangedSetProperty</Title>
+      <Author>dev@asWorks.de</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>asPropertyChangedSetProperty</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp" Delimiter="$"><![CDATA[    private string _id;
+    public string ID
+    {
+        get { return _id; }
+        set { this.SetProperty(ref this._id, value); }
+    }
+  
+
+
+ public event PropertyChangedEventHandler PropertyChanged;
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        {
+            if (object.Equals(storage, value)) return false;
+            storage = value;
+            this.OnPropertyChanged(propertyName);
+            return true;
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var eventHandler = this.PropertyChanged;
+            if (eventHandler != null)
+                eventHandler(this, new PropertyChangedEventArgs(propertyName));
+        }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
